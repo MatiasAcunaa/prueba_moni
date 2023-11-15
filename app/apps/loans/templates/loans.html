@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h3 class="text-center">Listado de prestamos</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr class="d-flex justify-content-between">
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Email</th>
+                <th scope="col">Monto Solicitado</th>
+                <th scope="col">Estado</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<main class="container">
+    <div class="row">
+        <div class="container">
+            <h3 class="text-center mt-3"></h3>
+
+            <ul class="list-group mt-4">
+                {% for loan in loans %}
+
+                <a class="list-group-item" href="{% url 'loan_detail' loan.id %}">
+                    <div class="d-flex justify-content-between">
+                        <h5>{{loan.first_name}}</h5>
+                        <h5>{{loan.last_name}}</h5>
+                        <p>{{loan.email}}</p>
+                        <p>{{loan.amount}}</p>
+                        <p>{{loan.status_display}}</p>
+                    </div>
+                </a>
+
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

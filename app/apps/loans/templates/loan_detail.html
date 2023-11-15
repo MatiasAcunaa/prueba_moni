@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>{{loan.first_name}}</h1>
+
+    {{ error }}
+    
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>
+            Actualizar
+        </button>
+    </form>
+    <br>
+    <form action="{% url 'delete_loan' loan.id %}" method="POST">
+        {% csrf_token %}
+        <button>
+             Eliminar 
+        </button>
+    </form>
+
+{% endblock %}

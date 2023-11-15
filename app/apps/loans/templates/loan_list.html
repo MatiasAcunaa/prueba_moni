@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-3">
+    <h3 class="text-center">Listado de prestamos</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Email</th>
+                <th scope="col">Monto Solicitado</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for loan in loans %}
+            <tr>
+                <td>{{ loan.first_name }}</td>
+                <td>{{ loan.last_name }}</td>
+                <td>{{ loan.email }}</td>
+                <td>${{ loan.amount }}</td>
+                <td>{{ loan.status_display }}</td>
+                <td> <!-- Columna para las acciones -->
+                    <!-- Botón para Eliminar -->
+                    <a href="{% url 'loan_delete' loan.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                    <!-- Botón para Actualizar -->
+                    <a href="{% url 'loan_update' loan.id %}" class="btn btn-dark">Editar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock %}

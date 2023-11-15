@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!-- Header -->
+<header class="container" id="home">
+    
+</header>
+
+<!-- Carousel -->
+<div class="carousel">
+    {% include 'partials/carousel.html' %}
+</div>
+
+<div class="featured mt-5">
+  {% include 'partials/featured.html' %}
+</div>
+
+<div class="about">
+  {% include 'partials/about.html' %}
+</div>
+
+<div class="card-img-bottom mt-5">
+    {% include 'partials/card.html' %}
+</div>
+
+{% endblock %}
