@@ -117,19 +117,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-# Definir la ruta para los archivos estáticos
+
 STATIC_URL = '/static/'
 
 # URL MONI
 URL_LOAD = 'https://api.moni.com.ar/api/v4/scoring/pre-score/'
 CREDENTIAL = 'ZGpzOTAzaWZuc2Zpb25kZnNubm5u'
 
-# Agregar la ubicación de los archivos estáticos de la aplicación loans
+# location of the static files of the loans application 
 STATICFILES_DIRS = [
     BASE_DIR / 'apps' / 'loans' / 'static',
 ]
 
-# Agregar la ubicación de los archivos estáticos de la aplicación profiles
+# location of the static files of the profiles application
 STATICFILES_DIRS += [
     BASE_DIR / 'apps' / 'profiles' / 'static',
 ]

@@ -70,7 +70,6 @@ def create_loan(request):
                     new_loan.status = STATUS_REJECTED
                     message = 'El usuario no es apto para el prestamo'
 
-                new_loan = form.save(commit=False)
                 new_loan.save()
                 return render(request, 'create_loan.html', {
                     'form': form,

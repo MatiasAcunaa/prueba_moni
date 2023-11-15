@@ -8,7 +8,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 ENV DJANGO_SETTINGS_MODULE=config.settings
 
-# Instala los paquetes necesarios, incluido postgresql
+# install the necessary packages
 RUN apk update \
     && apk add postgresql-dev gcc python3-dev musl-dev
 
@@ -19,7 +19,7 @@ RUN pip install -r requirements.txt
 
 EXPOSE 8000
 
-# Copia los archivos de tu aplicación al directorio de trabajo
+# Copy the application files to the working directory
 COPY . /app
 
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
