@@ -35,8 +35,3 @@ docker-compose run --rm --service-ports moni sh
 
 python manage.py test apps/loans
 ```
-
-
-
-
-REVISAR DJANGO.SETUP EN WSGI.py y ASGI.py
