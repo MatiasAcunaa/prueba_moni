@@ -21,7 +21,7 @@ También se debe desarrollarse un sitio de administración en el que se puedan v
 docker-compose build
 docker-compose up
 CTRL + C
-docker-compose web python manage.py createsuperuser
+docker-compose run moni python manage.py createsuperuser
 ```
 
 ## Run Server
